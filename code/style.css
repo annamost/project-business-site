@@ -1,5 +1,242 @@
-/* After you've linked the CSS file in the HTML,
-this should turn the background blue ;) */
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap');
+
+/* Here I first adapt the body to have the right background color and font-family */
 body {
-  background: blue;
+  background: #FAD6CA;
+  font-family: "Belanosima", serif;
+  margin: 0;
+}
+
+/* now I do mobile first styling */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 5px;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+/* TO DO MAKE BURGER MENUE FUNTIONAL */
+.menu-line {
+  width: 50px;
+  height: 5px;
+  fill: #F4805B;
+  background-color: #F4805B;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+}
+
+.orange-logo {
+  height: 80px;
+}
+
+/* now its the hero section */
+.video-web {
+  display: none;
+}
+
+.hero {
+  position: relative;
+}
+
+.video-mobile {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.hero-text-container {
+  position: absolute;
+  top: 1px;
+  padding: 10px 10px;
+}
+
+.hero-text-container h1 {
+  color: #2D421B;
+  font-size: 72pt;
+  margin: 0;
+  text-shadow: 2px 2px #F4805B;
+}
+
+/* now the problem section */
+
+.problem-section {
+  background-color: #FEEFEA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.problem-text {
+  color: #2D421B;
+}
+
+.problem-text h1 {
+  font-size: 30pt;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.problem-text p {
+  font-size: 16pt;
+  padding: 0 10px;
+  margin-top: 0;
+}
+
+.holding-monstera {
+  width: 45%;
+}
+
+/* next section */
+
+.how-to-section {
+  background-color: #FAD6CA;
+  margin-bottom: 20px;
+
+}
+
+.how-to-title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+
+}
+
+.holding-snakeplant {
+  width: 30%;
+}
+
+.how-to-title-container h1 {
+  color: #F4805B;
+  font-size: 30pt;
+}
+
+.step-by-step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+}
+
+.step-by-step-container h2 {
+  color: #2D421B;
+  font-size: 20pt;
+  margin: 0;
+}
+
+.step {
+  background-color: #F4805B;
+  border-radius: 12px;
+  padding: 20px 20px;
+  width: 40%;
+  /* height: 80px; */
+  text-align: center;
+
+}
+
+.step p {
+  color: #2D421B;
+  font-size: 16pt;
+  margin: 0;
+}
+
+/* now the form */
+
+.signup-form-section {
+  background-color: #FEEFEA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.holding-potedplant {
+  display: none;
+}
+
+.hangingplant {
+  display: none;
+}
+
+.signup-form-section h1 {
+  color: #F4805B;
+  font-size: 30pt;
+  text-align: center;
+  /* padding-top: 20px; */
+  margin-bottom: 0;
+  font-weight: regular;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+/* making sure the checkbox is still in a row */
+label:last-child {
+  flex-direction: row;
+}
+
+span {
+  color: #2D421B;
+}
+
+.text-input-field {
+  width: 100%;
+  /* if i put it to 70 percent it would not add up to 100 because we are inside flexbox... so the input will just fill it when we use the flex shrink */
+  appearance: none;
+  /* this will make sure we completely overwrite the default */
+  font-size: 15px;
+  padding: 10px 5px;
+  border: none;
+  /* you should have some indication of where you are but we are taking it away */
+  outline: none;
+  border-radius: 12px;
+
+}
+
+button {
+  background: #F4805B;
+  font-family: "Belanosima", serif;
+  border: none;
+  appearance: none;
+  /* this will make sure we completely overwrite the default */
+  border-radius: 4px;
+  width: 100%;
+  font-size: 20px;
+  color: white;
+
+  padding: 10px 10px;
+  margin-top: 20px;
+
+}
+
+/* make custom checkmark so i is oragne or green */
+
+/* just adding the footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.green-logo {
+  height: 80px;
+}
+
+.github-link {
+  color: #2D421B;
+  text-decoration: none;
+  font-size: 10pt;
 }
