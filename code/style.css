@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap');
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 /* Here I first adapt the body to have the right background color and font-family */
 body {
   background: #FAD6CA;
@@ -8,19 +14,81 @@ body {
 }
 
 /* now I do mobile first styling */
-nav {
+/* nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 5px;
+} */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .desktop-nav {
   display: none;
 }
 
+/* this is all the code to make the functional hamburger menue */
+
+/* here we define the variables we will use  */
+:root {
+  --bar-width: 60px;
+  --bar-height: 8px;
+  --hamburger-gap: 6px;
+  --foreground: #F4805B;
+  --background: #FAD6CA;
+  --hamburger-margin: 10px;
+  --animation-timing: 200ms ease-in-out;
+}
+
+
+.hamburger-menue {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburger-margin);
+  right: var(--hamburger-margin);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger-menue::before,
+.hamburger-menue::after,
+.hamburger-menue input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transition: opacity var(--animaltion-timing), width var(--animaltion-timing);
+}
+
+.hamburger-menue input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menue:has(input:checked)::before {
+  rotate: 45deg;
+}
+
+.hamburger-menue input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+
+
 /* TO DO MAKE BURGER MENUE FUNTIONAL */
-.menu-line {
+/* .menu-line {
   width: 50px;
   height: 5px;
   fill: #F4805B;
@@ -28,7 +96,7 @@ nav {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   border-radius: 10px;
-}
+} */
 
 .orange-logo {
   height: 80px;
@@ -183,8 +251,8 @@ label {
   flex-direction: column;
 }
 
-/* making sure the checkbox is still in a row */
-label:last-child {
+
+.checkbox-container {
   flex-direction: row;
 }
 
@@ -223,6 +291,7 @@ button {
 }
 
 /* make custom checkmark so i is oragne or green */
+/* making sure the data from the form works and its valid!  */
 
 /* just adding the footer */
 footer {
