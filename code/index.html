@@ -28,14 +28,18 @@
       <label class="hamburger-menue">
         <input type="checkbox">
       </label>
-      <!-- <aside class="sidebar">
-        <nav>
-          <a href="test">Catalog</a>
-          <a href="test">My Orders</a>
-          <a href="test">About</a>
-          <a href="test">Contact us</a>
+      <aside class="sidebar">
+        <nav class="hidden-sidebar">
+          <!-- <a href="test">Catalog</a>
+        <a href="test">My Orders</a>
+        <a href="test">About</a>
+        <a href="test">Contact us</a> -->
+          <div>Catalog</div>
+          <div>My Orders</div>
+          <div>About</div>
+          <div>Contact us</div>
         </nav>
-      </aside> -->
+      </aside>
     </div>
 
     <div class="desktop-nav">
@@ -112,20 +116,20 @@
 
       <img class="holding-potedplant" src="./assets/pottedplant.png" alt="holding-potedplant">
 
-      <form action="">
+      <form action="http://httpbin.org/anything" method="post">
         <h1>Sign up now!</h1>
         <fieldset>
           <label>
             <span>Name</span>
-            <input class="text-input-field" type="text" name="name">
+            <input class="text-input-field" type="text" name="name" required>
           </label>
           <label>
             <span>E-mail adress</span>
-            <input class="text-input-field" type="text" name="email">
+            <input class="text-input-field" type="email" name="email" required>
           </label>
           <label>
             <span>Password</span>
-            <input class="text-input-field" type="text" name="password">
+            <input class="text-input-field" type="password" name="password" required>
           </label>
           <div class="wrapper-row">
             <label class="checkbox-container">

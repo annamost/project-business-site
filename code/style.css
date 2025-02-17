@@ -24,6 +24,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* height: 100px; */
 
 }
 
@@ -41,11 +42,13 @@ header {
   --foreground: #F4805B;
   --background: #FAD6CA;
   --hamburger-margin: 10px;
-  --animation-timing: 200ms ease-in-out;
+  --animation-timing: 400ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height)*3 + var(--hamburger-gap)*2);
 }
 
 
 .hamburger-menue {
+  --x-width: calc(var(--hamburger-height)* 1.41421356237);
   display: flex;
   flex-direction: column;
   gap: var(--hamburger-gap);
@@ -57,6 +60,16 @@ header {
   cursor: pointer;
 }
 
+.hamburger-menue:has(input:checked) {
+  --foreground: #fad6ca;
+  --background: #f4805b;
+}
+
+.hamburger-menue:has(input:focus-visible)::before .hamburger-menue:has(input:focus-visible)::after .hamburger-menue:has(input:focus-visible) {
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
 .hamburger-menue::before,
 .hamburger-menue::after,
 .hamburger-menue input {
@@ -65,7 +78,8 @@ header {
   height: var(--bar-height);
   background-color: var(--foreground);
   border-radius: 9999px;
-  transition: opacity var(--animaltion-timing), width var(--animaltion-timing);
+  transform-origin: left center;
+  transition: opacity var(--animaltion-timing), width var(--animaltion-timing), rotate var(--animaltion-timing), translate var(--animaltion-timing), background-color var(--animaltion-timing);
 }
 
 .hamburger-menue input {
@@ -78,13 +92,55 @@ header {
 
 .hamburger-menue:has(input:checked)::before {
   rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) /-2);
+}
+
+.hamburger-menue:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
 }
 
 .hamburger-menue input:checked {
   opacity: 0;
   width: 0;
+  translate: 0 calc(var(--bar-height) /2);
 }
 
+
+
+.sidebar {
+  transition: translate var(--animaltion-timing);
+  translate: -1000%;
+
+  padding: 0.5rem 1rem;
+  padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+  background-color: var(--foreground);
+  color: var(--background);
+  width: 200px;
+  /* min-height: 100vh; */
+  font-size: 20pt;
+  /* z-index: 3; */
+  /* max-width: 10rem; */
+
+}
+
+.hamburger-menue:has(input:checked)+.sidebar {
+  translate: 0;
+  /* z-index: 1; */
+  position: relative;
+  left: 10%;
+  min-height: 100vh;
+
+}
+
+
+.hidden-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+}
 
 
 /* TO DO MAKE BURGER MENUE FUNTIONAL */
@@ -99,7 +155,8 @@ header {
 } */
 
 .orange-logo {
-  height: 80px;
+  height: 150px;
+  padding-left: 10px;
 }
 
 /* now its the hero section */
@@ -114,6 +171,7 @@ header {
 .video-mobile {
   width: 100%;
   border-radius: 4px;
+  z-index: 3;
 }
 
 .hero-text-container {
@@ -290,6 +348,13 @@ button {
 
 }
 
+/* here i now add some validations */
+.email-input-field input:invalid {
+  background-color: #F4805B;
+}
+
+
+
 /* make custom checkmark so i is oragne or green */
 /* making sure the data from the form works and its valid!  */
 
@@ -309,3 +374,25 @@ footer {
   text-decoration: none;
   font-size: 10pt;
 }
+
+/* now we adapt it for the different screen sizes */
+
+/* first tablet */
+
+@media (min-width: 667px) and (max-width: 1024px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  header {
+    justify-content: space-between;
+  }
+
+  .desktop-nav {
+    display: block;
+  }
+}
+
+/* then desktop */
+
+@media (min-width:1025px) {}
