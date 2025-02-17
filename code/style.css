@@ -93,18 +93,18 @@ header {
 .hamburger-menue:has(input:checked)::before {
   rotate: 45deg;
   width: var(--x-width);
-  translate: 0 calc(var(--bar-height) /-2);
+  translate: 0 calc(var(--bar-height) / -2);
 }
 
 .hamburger-menue:has(input:checked)::after {
   rotate: -45deg;
   width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
 }
 
 .hamburger-menue input:checked {
   opacity: 0;
   width: 0;
-  translate: 0 calc(var(--bar-height) /2);
 }
 
 
@@ -334,6 +334,7 @@ button {
 
   padding: 10px 10px;
   margin-top: 20px;
+  cursor: pointer;
 
 }
 
@@ -362,6 +363,20 @@ footer {
   color: #2D421B;
   text-decoration: none;
   font-size: 10pt;
+}
+
+/*  adding some hover animaltions */
+.orange-logo:hover {
+  opacity: 0.5;
+}
+
+.green-logo:hover {
+  opacity: 0.5;
+}
+
+.github-link:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 /* now we adapt it for the different screen sizes */
@@ -417,14 +432,14 @@ footer {
   }
 
   .hero-text-container {
-    top: 10px;
+    top: 5px;
     left: 10px;
   }
 
   .hero-text-container h1 {
-    font-size: 60pt;
+    font-size: 56pt;
     text-align: left;
-    width: 50%;
+    width: 60%;
   }
 
   .problem-section {
@@ -482,13 +497,11 @@ footer {
     left: -20px
   }
 
-
-
-
 }
 
+
 /* then desktop */
-@media (min-width:1025px) {
+@media (min-width:1124px) {
   .desktop-menue {
     font-size: 30pt;
   }
